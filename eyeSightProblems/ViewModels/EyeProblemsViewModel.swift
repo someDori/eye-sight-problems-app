@@ -37,7 +37,8 @@ class EyeProblems: ObservableObject {
                     name: "Anomaloscope Test",
                     description: "Measures color matching abilities."
                 )
-            ]
+            ],
+            problemType: .colorBlindness
         ),
         EyeProblem(
             name: "Refractive Errors",
@@ -56,7 +57,8 @@ class EyeProblems: ObservableObject {
                     name: "Astigmatism Test",
                     description: "Identifies distorted vision using radiating lines."
                 )
-            ]
+            ],
+            problemType: .reflectiveError
         ),
         EyeProblem(
             name: "Amblyopia",
@@ -72,7 +74,8 @@ class EyeProblems: ObservableObject {
                     name: "Visual Acuity Test",
                     description: "Compares vision in both eyes."
                 )
-            ]
+            ],
+            problemType: .amblyopia
         )
     ]
 }

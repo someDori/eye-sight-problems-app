@@ -10,14 +10,16 @@ import SwiftUI
 struct HomeView: View {
     var body: some View {
         NavigationStack {
-            GeometryReader { _ in
+            GeometryReader { geo in
                 VStack(alignment: .center) {
                     Spacer()
                     Image(systemName: "eye.circle")
                         .resizable()
                         .scaledToFit()
                     Spacer()
-                    NavigationLink(destination: Text("testing")) {
+                    NavigationLink(
+                        destination: ProblemsView(geo: geo)
+                    ) {
                         Text("Let's test your eyes")
                             .font(.largeTitle)
                             .padding(8)
