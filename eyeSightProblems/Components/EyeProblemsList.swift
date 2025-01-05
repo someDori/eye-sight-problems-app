@@ -10,6 +10,7 @@ import SwiftUI
 struct EyeProblemsList: View {
     @ObservedObject var eyeProblems: EyeProblems = .shared
     @Binding var showDialog: Bool
+    @Binding var showAlert: Bool
     @Binding var chosenProblem: EyeProblem?
     var geo: GeometryProxy
     var numberOfColumns: Int
@@ -35,7 +36,11 @@ struct EyeProblemsList: View {
                 )
                     .onTapGesture {
                         chosenProblem = problem
-                        showDialog = true
+                        if problem.tests.isEmpty {
+                            showAlert = true
+                        } else {
+                            showDialog = true
+                        }
                     }
             }
         }

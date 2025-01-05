@@ -48,16 +48,7 @@ class EyeProblems: ObservableObject {
                 "Blurred vision",
                 "Difficulty focusing on distant or near objects"
             ],
-            tests: [
-                Test(
-                    name: "Snellen Chart Test",
-                    description: "Measures visual acuity with letters on a chart."
-                ),
-                Test(
-                    name: "Astigmatism Test",
-                    description: "Identifies distorted vision using radiating lines."
-                )
-            ],
+            tests: [],
             problemType: .reflectiveError
         ),
         EyeProblem(

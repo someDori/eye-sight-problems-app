@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct ProblemsView: View {
-    @State var geo: GeometryProxy
+    var geo: GeometryProxy
     @State var showDialog = false
+    @State var showAlert = false
     @State var chosenProblem: EyeProblem?
 
     var body: some View {
@@ -26,6 +27,7 @@ struct ProblemsView: View {
 
                 EyeProblemsList(
                     showDialog: $showDialog,
+                    showAlert: $showAlert,
                     chosenProblem: $chosenProblem,
                     geo: geo,
                     numberOfColumns: 2
@@ -35,6 +37,16 @@ struct ProblemsView: View {
             }
             .navigationTitle("Eye problems")
             .navigationBarTitleDisplayMode(.large)
+            .alert(
+                "No tests for now",
+                isPresented: $showAlert
+            ) {
+                Button("Cancel", role: .cancel) {
+                    showAlert = false
+                }
+            } message: {
+                Text("There are no tests for now to check this problem")
+            }
             .confirmationDialog(
                 "Choose a test",
                 isPresented: $showDialog,
@@ -46,11 +58,26 @@ struct ProblemsView: View {
                     }
                 }
                 Button("Cancel", role: .cancel) {
-                    // Handle cancel action
+                    showDialog = false
                 }
             }
             .padding()
         }
+//        .onChange(of: chosenProblem) {
+//            guard let problem = chosenProblem else {
+//                showAlert = false
+//                showDialog = false
+//                
+//                return
+//            }
+//            if problem.tests.isEmpty {
+//                showAlert = true
+//                showDialog = false
+//            } else {
+//                showAlert = false
+//                showDialog = true
+//            }
+//        }
     }
 }
 
