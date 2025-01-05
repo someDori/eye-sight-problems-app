@@ -9,19 +9,25 @@ import SwiftUI
 
 struct EyeProblemBox: View {
     var problem: EyeProblem
-    var geo: GeometryProxy
+    var width: CGFloat
+    var contentMode: ContentMode
+    var cornerRadius: Int
+    var lineWidth: Int
+    var lineColor: Color
+    var multilineTextAlignment: TextAlignment
+    var font: Font
     
     var body: some View {
         Text(problem.name)
-            .font(.title)
+            .font(font)
             .padding()
-            .multilineTextAlignment(.center)
-            .frame(width: geo.size.width / 2 - 20)
+            .multilineTextAlignment(multilineTextAlignment)
+            .frame(width: width)
             .fixedSize(horizontal: true, vertical: true)
-            .aspectRatio(contentMode: .fit)
+            .aspectRatio(contentMode: contentMode)
             .overlay(
-                RoundedRectangle(cornerRadius: 15)
-                    .stroke(.black, lineWidth: 1)
+                RoundedRectangle(cornerRadius: CGFloat(cornerRadius))
+                    .stroke(lineColor, lineWidth: CGFloat(lineWidth))
             )
     }
 }
@@ -58,7 +64,13 @@ struct EyeProblemBox: View {
                 ],
                 problemType: .colorBlindness
             ),
-            geo: geo
+            width: geo.size.width / 2 - 20,
+            contentMode: .fit,
+            cornerRadius: 15,
+            lineWidth: 1,
+            lineColor: .black,
+            multilineTextAlignment: .center,
+            font: .title
         )
     }
 }

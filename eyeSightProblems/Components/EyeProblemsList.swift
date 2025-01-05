@@ -18,7 +18,16 @@ struct EyeProblemsList: View {
             columns: [GridItem(.flexible()), GridItem(.flexible())]
         ) {
             ForEach(eyeProblems.eyeProblems, id: \.id) { (problem: EyeProblem) in
-                EyeProblemBox(problem: problem, geo: geo)
+                EyeProblemBox(
+                    problem: problem,
+                    width: geo.size.width / 2 - 20,
+                    contentMode: .fit,
+                    cornerRadius: 15,
+                    lineWidth: 1,
+                    lineColor: .black,
+                    multilineTextAlignment: .center,
+                    font: .title
+                )
                     .onTapGesture {
                         chosenProblem = problem
                         showDialog = true
