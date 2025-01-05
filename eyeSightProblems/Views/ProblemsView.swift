@@ -25,9 +25,10 @@ struct ProblemsView: View {
                 Spacer()
 
                 EyeProblemsList(
-                    geo: geo,
                     showDialog: $showDialog,
-                    chosenProblem: $chosenProblem
+                    chosenProblem: $chosenProblem,
+                    geo: geo,
+                    numberOfColumns: 2
                 )
 
                 Spacer()

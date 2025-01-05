@@ -9,13 +9,18 @@ import SwiftUI
 
 struct EyeProblemsList: View {
     @ObservedObject var eyeProblems: EyeProblems = .shared
-    var geo: GeometryProxy
     @Binding var showDialog: Bool
     @Binding var chosenProblem: EyeProblem?
+    var geo: GeometryProxy
+    var numberOfColumns: Int
     
     var body: some View {
         LazyVGrid(
-            columns: [GridItem(.flexible()), GridItem(.flexible())]
+//            columns: [GridItem(.flexible()), GridItem(.flexible())]
+            columns: Array(
+                repeating: GridItem(.flexible()),
+                count: numberOfColumns
+            )
         ) {
             ForEach(eyeProblems.eyeProblems, id: \.id) { (problem: EyeProblem) in
                 EyeProblemBox(
