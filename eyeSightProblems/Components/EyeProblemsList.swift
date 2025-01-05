@@ -17,7 +17,6 @@ struct EyeProblemsList: View {
     
     var body: some View {
         LazyVGrid(
-//            columns: [GridItem(.flexible()), GridItem(.flexible())]
             columns: Array(
                 repeating: GridItem(.flexible()),
                 count: numberOfColumns

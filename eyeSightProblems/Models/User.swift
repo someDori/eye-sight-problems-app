@@ -17,7 +17,3 @@ struct User: Identifiable {
     var profilePicture: UIImage?
     var gender: Gender
 }
-
-enum Gender: CaseIterable {
-    case male, female, secret, other
-}

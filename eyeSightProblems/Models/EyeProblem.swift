@@ -7,12 +7,6 @@
 
 import Foundation
 
-enum EyeProblemTypes: CaseIterable, Hashable {
-    case colorBlindness
-    case reflectiveError
-    case amblyopia
-}
-
 struct EyeProblem: Identifiable, Hashable {
     var id: UUID = UUID()
     var name: String
@@ -21,10 +15,4 @@ struct EyeProblem: Identifiable, Hashable {
     var symptoms: [String]?
     var tests: [Test]
     var problemType: EyeProblemTypes?
-}
-
-struct Test: Identifiable, Hashable {
-    var id: UUID = UUID()
-    var name: String
-    var description: String
 }

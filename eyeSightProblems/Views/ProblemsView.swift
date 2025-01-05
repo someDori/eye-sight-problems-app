@@ -63,21 +63,6 @@ struct ProblemsView: View {
             }
             .padding()
         }
-//        .onChange(of: chosenProblem) {
-//            guard let problem = chosenProblem else {
-//                showAlert = false
-//                showDialog = false
-//                
-//                return
-//            }
-//            if problem.tests.isEmpty {
-//                showAlert = true
-//                showDialog = false
-//            } else {
-//                showAlert = false
-//                showDialog = true
-//            }
-//        }
     }
 }
 
