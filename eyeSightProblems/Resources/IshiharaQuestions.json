@@ -1,8 +1,19 @@
-//
-//  IshiharaQuestions.json
-//  eyeSightProblems
-//
-//  Created by Demetre Panjakidze on 05.01.25.
-//
-
-import Foundation
+[
+    {
+        "id": 0,
+        "imagePath": "plate1.png",
+        "answers": [
+            1, 7, 3, 9
+        ],
+        "correctAnswer": 1,
+        "difficulty": "easy"
+    },
+    {
+        "imagePath": "plate2.png",
+        "answers": [
+            4, 8, 1, 2
+        ],
+        "correctAnswer": 2,
+        "difficulty": "medium"
+    }
+]

@@ -8,8 +8,14 @@
 import SwiftUI
 
 struct TestView: View {
+    var testService = IshiharaTestService()
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Button("Load questions") {
+                testService.loadQuestions()
+            }
+        }
     }
 }
 
