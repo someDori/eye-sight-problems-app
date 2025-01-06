@@ -7,10 +7,10 @@
 
 import Foundation
 
-struct SingleTurn: Identifiable {
+struct IshiharaQuestion: Identifiable {
     var id: UUID = UUID()
     var imagePath: String
     var answers: [Int]
     var correctAnswer: Int
-    var difficulty: String
+    var difficulty: Difficulty
 }

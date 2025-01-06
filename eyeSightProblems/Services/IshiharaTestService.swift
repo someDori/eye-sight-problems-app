@@ -7,18 +7,23 @@
 
 import Foundation
 
-class GameService {
+class TestService {
+    
     var currentScore: Int
     var numberOfQuestions: Int
-    var gameStarted: Bool
+    var testStarted: Bool
     
     init(currentScore: Int, numberOfQuestions: Int) {
         self.currentScore = currentScore
         self.numberOfQuestions = numberOfQuestions
-        self.gameStarted = false
+        self.testStarted = false
     }
     
-    func startGame() {
-        gameStarted = true
+    func startTest() {
+        testStarted = true
+    }
+    
+    func stopTest() {
+        testStarted = false
     }
 }
