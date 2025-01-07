@@ -13,20 +13,18 @@ class IshiharaTestService {
     private(set) var currentQuestionIndex = 0
     private(set) var score = 0
     private(set) var isGameOnGoing = false
-
+    
+    func loadQuestions() {
+        questions = shared.loadQuestionsFromFile()
+        print(questions)
+    }
+    
     func startTest() {
         loadQuestions()
         currentQuestionIndex = 0
         score = 0
         isGameOnGoing = true
     }
-    
-    func loadQuestions() {
-        print("in loadQuestions")
-        questions = loadIshiharaQuestions()
-        print(questions)
-    }
-    
     func getCurrentQuestion() -> IshiharaQuestion? {
         guard currentQuestionIndex < questions.count else { return nil }
         return questions[currentQuestionIndex]
@@ -52,9 +50,5 @@ class IshiharaTestService {
     func getFinalScore() -> Int {
         isGameOnGoing = false
         return score
-    }
-    
-    private func loadIshiharaQuestions() -> [IshiharaQuestion] {
-        return shared.loadQuestionsFromFile()
     }
 }

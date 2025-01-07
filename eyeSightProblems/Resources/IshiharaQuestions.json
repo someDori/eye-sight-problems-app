@@ -1,19 +1,17 @@
 [
     {
         "id": 0,
-        "imagePath": "plate1.png",
+        "imagePath": "7-medium",
         "answers": [
-            1, 7, 3, 9
+            "1", "7", "3", "9"
         ],
-        "correctAnswer": 1,
-        "difficulty": "easy"
+        "difficulty": "medium"
     },
     {
-        "imagePath": "plate2.png",
+        "imagePath": "29-hard",
         "answers": [
-            4, 8, 1, 2
+            "29", "27", "79", "70"
         ],
-        "correctAnswer": 2,
         "difficulty": "medium"
     }
 ]

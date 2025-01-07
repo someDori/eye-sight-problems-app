@@ -53,8 +53,8 @@ struct ProblemsView: View {
                 titleVisibility: .visible
             ) {
                 ForEach(chosenProblem?.tests ?? [], id: \.self) { (test: Test) in
-                    Button(test.name) {
-                        // Handle test selection
+                    NavigationLink(test.name) {
+                        TestView(testName: test.name)
                     }
                 }
                 Button("Cancel", role: .cancel) {

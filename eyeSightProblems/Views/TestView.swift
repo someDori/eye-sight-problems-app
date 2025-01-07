@@ -9,16 +9,20 @@ import SwiftUI
 
 struct TestView: View {
     var testService = IshiharaTestService()
+    var testName: String
     
     var body: some View {
         VStack {
-            Button("Load questions") {
-                testService.loadQuestions()
-            }
+            Image("7-medium")
+                .resizable()
+                .scaledToFit()
+                .frame(width: .infinity)
+            Spacer()
+            
         }
     }
 }
 
 #Preview {
-    TestView()
+    TestView(testName: "ishihara test")
 }

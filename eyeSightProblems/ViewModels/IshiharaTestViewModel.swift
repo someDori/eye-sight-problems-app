@@ -10,7 +10,7 @@ import Foundation
 class IshiharaTestViewModel: ObservableObject {
     static let shared = IshiharaTestViewModel()
     
-    func loadQuestionsFromFile() -> [IshiharaQuestion]{
+    func loadQuestionsFromFile() -> [IshiharaQuestion] {
         guard let url = Bundle.main.url(forResource: "IshiharaQuestions", withExtension: "json") else {
             print("Failed to locate file")
             return []
